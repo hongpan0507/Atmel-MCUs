@@ -1,0 +1,348 @@
+
+tiny841_BlueTooth.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000004  00800100  0000017e  00000212  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         0000017e  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000002  00800104  00800104  00000216  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000216  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000248  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000048  00000000  00000000  00000284  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   0000033f  00000000  00000000  000002cc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 000001fb  00000000  00000000  0000060b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   000001d3  00000000  00000000  00000806  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  0000009c  00000000  00000000  000009dc  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    000002ab  00000000  00000000  00000a78  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000141  00000000  00000000  00000d23  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000038  00000000  00000000  00000e64  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	1d c0       	rjmp	.+58     	; 0x3c <__ctors_end>
+   2:	37 c0       	rjmp	.+110    	; 0x72 <__bad_interrupt>
+   4:	36 c0       	rjmp	.+108    	; 0x72 <__bad_interrupt>
+   6:	35 c0       	rjmp	.+106    	; 0x72 <__bad_interrupt>
+   8:	34 c0       	rjmp	.+104    	; 0x72 <__bad_interrupt>
+   a:	33 c0       	rjmp	.+102    	; 0x72 <__bad_interrupt>
+   c:	32 c0       	rjmp	.+100    	; 0x72 <__bad_interrupt>
+   e:	31 c0       	rjmp	.+98     	; 0x72 <__bad_interrupt>
+  10:	30 c0       	rjmp	.+96     	; 0x72 <__bad_interrupt>
+  12:	2f c0       	rjmp	.+94     	; 0x72 <__bad_interrupt>
+  14:	2e c0       	rjmp	.+92     	; 0x72 <__bad_interrupt>
+  16:	2d c0       	rjmp	.+90     	; 0x72 <__bad_interrupt>
+  18:	2c c0       	rjmp	.+88     	; 0x72 <__bad_interrupt>
+  1a:	2b c0       	rjmp	.+86     	; 0x72 <__bad_interrupt>
+  1c:	2a c0       	rjmp	.+84     	; 0x72 <__bad_interrupt>
+  1e:	29 c0       	rjmp	.+82     	; 0x72 <__bad_interrupt>
+  20:	28 c0       	rjmp	.+80     	; 0x72 <__bad_interrupt>
+  22:	27 c0       	rjmp	.+78     	; 0x72 <__bad_interrupt>
+  24:	26 c0       	rjmp	.+76     	; 0x72 <__bad_interrupt>
+  26:	25 c0       	rjmp	.+74     	; 0x72 <__bad_interrupt>
+  28:	24 c0       	rjmp	.+72     	; 0x72 <__bad_interrupt>
+  2a:	23 c0       	rjmp	.+70     	; 0x72 <__bad_interrupt>
+  2c:	23 c0       	rjmp	.+70     	; 0x74 <__vector_22>
+  2e:	21 c0       	rjmp	.+66     	; 0x72 <__bad_interrupt>
+  30:	20 c0       	rjmp	.+64     	; 0x72 <__bad_interrupt>
+  32:	1f c0       	rjmp	.+62     	; 0x72 <__bad_interrupt>
+  34:	1e c0       	rjmp	.+60     	; 0x72 <__bad_interrupt>
+  36:	1d c0       	rjmp	.+58     	; 0x72 <__bad_interrupt>
+  38:	1c c0       	rjmp	.+56     	; 0x72 <__bad_interrupt>
+  3a:	1b c0       	rjmp	.+54     	; 0x72 <__bad_interrupt>
+
+0000003c <__ctors_end>:
+  3c:	11 24       	eor	r1, r1
+  3e:	1f be       	out	0x3f, r1	; 63
+  40:	cf ef       	ldi	r28, 0xFF	; 255
+  42:	d2 e0       	ldi	r29, 0x02	; 2
+  44:	de bf       	out	0x3e, r29	; 62
+  46:	cd bf       	out	0x3d, r28	; 61
+
+00000048 <__do_copy_data>:
+  48:	11 e0       	ldi	r17, 0x01	; 1
+  4a:	a0 e0       	ldi	r26, 0x00	; 0
+  4c:	b1 e0       	ldi	r27, 0x01	; 1
+  4e:	ee e7       	ldi	r30, 0x7E	; 126
+  50:	f1 e0       	ldi	r31, 0x01	; 1
+  52:	02 c0       	rjmp	.+4      	; 0x58 <__do_copy_data+0x10>
+  54:	05 90       	lpm	r0, Z+
+  56:	0d 92       	st	X+, r0
+  58:	a4 30       	cpi	r26, 0x04	; 4
+  5a:	b1 07       	cpc	r27, r17
+  5c:	d9 f7       	brne	.-10     	; 0x54 <__do_copy_data+0xc>
+
+0000005e <__do_clear_bss>:
+  5e:	21 e0       	ldi	r18, 0x01	; 1
+  60:	a4 e0       	ldi	r26, 0x04	; 4
+  62:	b1 e0       	ldi	r27, 0x01	; 1
+  64:	01 c0       	rjmp	.+2      	; 0x68 <.do_clear_bss_start>
+
+00000066 <.do_clear_bss_loop>:
+  66:	1d 92       	st	X+, r1
+
+00000068 <.do_clear_bss_start>:
+  68:	a6 30       	cpi	r26, 0x06	; 6
+  6a:	b2 07       	cpc	r27, r18
+  6c:	e1 f7       	brne	.-8      	; 0x66 <.do_clear_bss_loop>
+  6e:	71 d0       	rcall	.+226    	; 0x152 <main>
+  70:	84 c0       	rjmp	.+264    	; 0x17a <_exit>
+
+00000072 <__bad_interrupt>:
+  72:	c6 cf       	rjmp	.-116    	; 0x0 <__vectors>
+
+00000074 <__vector_22>:
+	
+	uint16_t ADC_data = 0;
+	ADC_data |= ADC_val[1];
+	ADC_data = ADC_data << 8;
+	ADC_data |= ADC_val[0];
+	double vcc = 1024.0 * 1.1/double(ADC_data);	//1024.0 = ADC resolution; 1.1=internal voltage reference;
+  74:	1f 92       	push	r1
+  76:	0f 92       	push	r0
+  78:	0f b6       	in	r0, 0x3f	; 63
+  7a:	0f 92       	push	r0
+  7c:	11 24       	eor	r1, r1
+  7e:	8f 93       	push	r24
+	
+	ADMUXA = 1<<MUX3;	//select PB2 (ADC8) as ADC input channel; page 134; pgae 144
+	
+	return vcc;
+}
+  80:	ef 93       	push	r30
+		UART_TX(data_out[1]);
+	}
+}
+
+//------------------------------Interrupt Service Routine--------------------------------------------------------------
+ISR(USART0_RX_vect, ISR_BLOCK){	//USART1 Receive complete interrupt service routine	
+  82:	ff 93       	push	r31
+	//}	
+	//data_flush = SPDR;		//clear SPI interrupt flag; page 158
+	//UCSR0A |= 1<<TXC0;	//clear USART0 transmit complete signal; page 193		
+	//PORTA |= (1<<PORTA7);	//ss high; stop SPI transfer
+	//send data to digital phase shifter here
+	data_in = UDR0;		//receive data from the USART1 receiver buffer; page 180
+  84:	e0 e8       	ldi	r30, 0x80	; 128
+  86:	f0 e0       	ldi	r31, 0x00	; 0
+  88:	80 81       	ld	r24, Z
+  8a:	80 93 05 01 	sts	0x0105, r24
+	UDR0 = data_in;		//place data to USART0 data buffer and initiate data transfer; provide feedback to check bluetooth command page 190		
+  8e:	80 91 05 01 	lds	r24, 0x0105
+  92:	80 83       	st	Z, r24
+	while(!(UCSR0A & (1<<TXC0))){	//TXC0 bit is set if USART0 transfer is complete; page 193
+  94:	e6 e8       	ldi	r30, 0x86	; 134
+  96:	f0 e0       	ldi	r31, 0x00	; 0
+  98:	80 81       	ld	r24, Z
+  9a:	86 ff       	sbrs	r24, 6
+  9c:	fd cf       	rjmp	.-6      	; 0x98 <__vector_22+0x24>
+		;	// wait until USART0 TX transfer is completed
+	}
+		
+	UCSR0A |= 1<<TXC0;	//clear USART0 transmit complete signal; page 193
+  9e:	e6 e8       	ldi	r30, 0x86	; 134
+  a0:	f0 e0       	ldi	r31, 0x00	; 0
+  a2:	80 81       	ld	r24, Z
+  a4:	80 64       	ori	r24, 0x40	; 64
+  a6:	80 83       	st	Z, r24
+	
+	received_signal = true;	
+  a8:	81 e0       	ldi	r24, 0x01	; 1
+  aa:	80 93 04 01 	sts	0x0104, r24
+}
+  ae:	ff 91       	pop	r31
+  b0:	ef 91       	pop	r30
+  b2:	8f 91       	pop	r24
+  b4:	0f 90       	pop	r0
+  b6:	0f be       	out	0x3f, r0	; 63
+  b8:	0f 90       	pop	r0
+  ba:	1f 90       	pop	r1
+  bc:	18 95       	reti
+
+000000be <_Z7UART_TXh>:
+
+//---------------------------------------------------------------------------------------------------------------------
+
+//------------------------------User Defined Functions--------------------------------------------------------------
+void UART_TX(uint8_t TX_data){	//send data using UART0
+	UDR0 = TX_data;	//place data to USART0 data buffer and initiate data transfer; provide feedback to check bluetooth command page 190	
+  be:	80 93 80 00 	sts	0x0080, r24
+	while(!(UCSR0A & (1<<TXC0))){	//TXC0 bit is set if USART0 transfer is complete; page 193
+  c2:	e6 e8       	ldi	r30, 0x86	; 134
+  c4:	f0 e0       	ldi	r31, 0x00	; 0
+  c6:	80 81       	ld	r24, Z
+  c8:	86 ff       	sbrs	r24, 6
+  ca:	fd cf       	rjmp	.-6      	; 0xc6 <_Z7UART_TXh+0x8>
+		;	// wait until USART0 TX transfer is completed
+	}							
+	UCSR0A |= 1<<TXC0;	//clear USART0 transmit complete signal; page 193
+  cc:	e6 e8       	ldi	r30, 0x86	; 134
+  ce:	f0 e0       	ldi	r31, 0x00	; 0
+  d0:	80 81       	ld	r24, Z
+  d2:	80 64       	ori	r24, 0x40	; 64
+  d4:	80 83       	st	Z, r24
+  d6:	08 95       	ret
+
+000000d8 <_Z11USART0_inith>:
+}
+
+//initialize USART0 to operate in asynchronous mode
+//8 data bit; 1 stop bit; odd parity check
+//use alternative RX, TX pin
+void USART0_init(uint8_t baud_rate){	
+  d8:	cf 93       	push	r28
+  da:	df 93       	push	r29
+	PRR &= ~(1<<PRUSART0);	//enable USART0 module in PRR; page39; page 160
+  dc:	e0 e7       	ldi	r30, 0x70	; 112
+  de:	f0 e0       	ldi	r31, 0x00	; 0
+  e0:	90 81       	ld	r25, Z
+  e2:	9f 7d       	andi	r25, 0xDF	; 223
+  e4:	90 83       	st	Z, r25
+	REMAP |= 1 << U0MAP;	//remap USART0 to use alternative location; PA7, PB2; page 186
+  e6:	e5 e6       	ldi	r30, 0x65	; 101
+  e8:	f0 e0       	ldi	r31, 0x00	; 0
+  ea:	90 81       	ld	r25, Z
+  ec:	91 60       	ori	r25, 0x01	; 1
+  ee:	90 83       	st	Z, r25
+	UBRR0 = 0;	//set the baud_rate to zero; page 189	
+  f0:	c1 e8       	ldi	r28, 0x81	; 129
+  f2:	d0 e0       	ldi	r29, 0x00	; 0
+  f4:	19 82       	std	Y+1, r1	; 0x01
+  f6:	18 82       	st	Y, r1
+	UCSR0C &= ~((1<<UMSEL00) | (1<<UMSEL01));	//enable USART0 in asynchronous mode; page 195
+  f8:	e4 e8       	ldi	r30, 0x84	; 132
+  fa:	f0 e0       	ldi	r31, 0x00	; 0
+  fc:	90 81       	ld	r25, Z
+  fe:	9f 73       	andi	r25, 0x3F	; 63
+ 100:	90 83       	st	Z, r25
+	UCSR0C |= (1<<UPM01)|(1<<UPM00);	//enable parity check; odd parity; page 183
+ 102:	90 81       	ld	r25, Z
+ 104:	90 63       	ori	r25, 0x30	; 48
+ 106:	90 83       	st	Z, r25
+	UCSR0C |= (1<<USBS0);	//select 1 stop bit; page 184
+ 108:	90 81       	ld	r25, Z
+ 10a:	98 60       	ori	r25, 0x08	; 8
+ 10c:	90 83       	st	Z, r25
+	UCSR0B &= ~(1<<UCSZ02);	//character size; set tp 8 bit; page 184
+ 10e:	a5 e8       	ldi	r26, 0x85	; 133
+ 110:	b0 e0       	ldi	r27, 0x00	; 0
+ 112:	9c 91       	ld	r25, X
+ 114:	9b 7f       	andi	r25, 0xFB	; 251
+ 116:	9c 93       	st	X, r25
+	UCSR0C |= (1<<UCSZ01)|(1<<UCSZ00);	//character size; set tp 8 bit; page 184
+ 118:	90 81       	ld	r25, Z
+ 11a:	96 60       	ori	r25, 0x06	; 6
+ 11c:	90 83       	st	Z, r25
+	UCSR0C &= ~(1<<UCPOL0);	//set to zero when using asynchronous mode; page 184	
+ 11e:	90 81       	ld	r25, Z
+ 120:	9e 7f       	andi	r25, 0xFE	; 254
+ 122:	90 83       	st	Z, r25
+	UCSR0C |= (1<<UDORD0);	//LSB first; page 195	
+ 124:	90 81       	ld	r25, Z
+ 126:	94 60       	ori	r25, 0x04	; 4
+ 128:	90 83       	st	Z, r25
+	UCSR0A &= ~(1<<U2X0);	//do no double transmission speed; page 181	
+ 12a:	e6 e8       	ldi	r30, 0x86	; 134
+ 12c:	f0 e0       	ldi	r31, 0x00	; 0
+ 12e:	90 81       	ld	r25, Z
+ 130:	9d 7f       	andi	r25, 0xFD	; 253
+ 132:	90 83       	st	Z, r25
+	UBRR0 = baud_rate;	//set the baud_rate; baud_rate = 0 -> 1Mbps; page 180
+ 134:	90 e0       	ldi	r25, 0x00	; 0
+ 136:	99 83       	std	Y+1, r25	; 0x01
+ 138:	88 83       	st	Y, r24
+	UCSR0B |= 1<<RXCIE0;	//enable RX complete Interrupt; page 182
+ 13a:	8c 91       	ld	r24, X
+ 13c:	80 68       	ori	r24, 0x80	; 128
+ 13e:	8c 93       	st	X, r24
+	//UCSR0D |= 1<<RXSIE0;	//enable RX start interrupt; page 185
+	UCSR0B |= (1<<TXEN0);	//enable transmitter; page 182
+ 140:	8c 91       	ld	r24, X
+ 142:	88 60       	ori	r24, 0x08	; 8
+ 144:	8c 93       	st	X, r24
+	UCSR0B |= (1<<RXEN0);	//enable receiver; page 182
+ 146:	8c 91       	ld	r24, X
+ 148:	80 61       	ori	r24, 0x10	; 16
+ 14a:	8c 93       	st	X, r24
+}
+ 14c:	df 91       	pop	r29
+ 14e:	cf 91       	pop	r28
+ 150:	08 95       	ret
+
+00000152 <main>:
+volatile double volt = 0;	//place as global only for debugging purpose
+volatile double v_ref = 0;	//place as global only for debugging purpose
+
+int main(){					
+	uint16_t volt_data = 0;		
+	 DDRA |= 1<<DDRA0;	//set PB2 as output to flash LED
+ 152:	d0 9a       	sbi	0x1a, 0	; 26
+	//DDRA |= 1<<DDRA7;	//set PB2 as output to flash LED
+	//DDRA |= 1<<DDRA2;	//set PB2 as output to flash LED
+	cli();	//disable global interrupt; atmel built-in function
+ 154:	f8 94       	cli
+	//set the baud_rate to 9600 assuming sys clk = 8MHz; page 180
+	USART0_init(51);	//initialize USART0 module; user defined function;
+ 156:	83 e3       	ldi	r24, 0x33	; 51
+ 158:	bf df       	rcall	.-130    	; 0xd8 <_Z11USART0_inith>
+	//SPI_init();	//initialize SPI module; user defined function
+	//v_ref = ADC_init();	
+	sei();	//enable global interrupt; atmel built-in function
+ 15a:	78 94       	sei
+		//UART_TX(ADC_val[0]); //send low bits		
+		 PINA |= 1<<PINA0;
+		 //PINA |= 1<<PINA7;
+		//PINA |= 1<<PINA2;
+		
+		UART_TX(data_out[1]);
+ 15c:	c0 e0       	ldi	r28, 0x00	; 0
+ 15e:	d1 e0       	ldi	r29, 0x01	; 1
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 160:	2f ef       	ldi	r18, 0xFF	; 255
+ 162:	80 e7       	ldi	r24, 0x70	; 112
+ 164:	92 e0       	ldi	r25, 0x02	; 2
+ 166:	21 50       	subi	r18, 0x01	; 1
+ 168:	80 40       	sbci	r24, 0x00	; 0
+ 16a:	90 40       	sbci	r25, 0x00	; 0
+ 16c:	e1 f7       	brne	.-8      	; 0x166 <main+0x14>
+ 16e:	00 c0       	rjmp	.+0      	; 0x170 <main+0x1e>
+ 170:	00 00       	nop
+		//
+		//volt = 	v_ref * double(volt_data) / 1024.0;		// conversion formula; page	143	
+						//
+		//UART_TX(ADC_val[1]); //send high bits first
+		//UART_TX(ADC_val[0]); //send low bits		
+		 PINA |= 1<<PINA0;
+ 172:	c8 9a       	sbi	0x19, 0	; 25
+		 //PINA |= 1<<PINA7;
+		//PINA |= 1<<PINA2;
+		
+		UART_TX(data_out[1]);
+ 174:	89 81       	ldd	r24, Y+1	; 0x01
+ 176:	a3 df       	rcall	.-186    	; 0xbe <_Z7UART_TXh>
+	}
+ 178:	f3 cf       	rjmp	.-26     	; 0x160 <main+0xe>
+
+0000017a <_exit>:
+ 17a:	f8 94       	cli
+
+0000017c <__stop_program>:
+ 17c:	ff cf       	rjmp	.-2      	; 0x17c <__stop_program>

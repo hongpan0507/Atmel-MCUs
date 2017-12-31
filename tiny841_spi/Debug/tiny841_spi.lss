@@ -1,0 +1,311 @@
+
+tiny841_spi.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000004  00800100  00000174  00000208  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000174  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000002  00800104  00800104  0000020c  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  0000020c  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  0000023c  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000038  00000000  00000000  00000278  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   000002d9  00000000  00000000  000002b0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000176  00000000  00000000  00000589  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000184  00000000  00000000  000006ff  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000070  00000000  00000000  00000884  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000232  00000000  00000000  000008f4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000056  00000000  00000000  00000b26  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000028  00000000  00000000  00000b7c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	1d c0       	rjmp	.+58     	; 0x3c <__ctors_end>
+   2:	37 c0       	rjmp	.+110    	; 0x72 <__bad_interrupt>
+   4:	36 c0       	rjmp	.+108    	; 0x72 <__bad_interrupt>
+   6:	35 c0       	rjmp	.+106    	; 0x72 <__bad_interrupt>
+   8:	34 c0       	rjmp	.+104    	; 0x72 <__bad_interrupt>
+   a:	33 c0       	rjmp	.+102    	; 0x72 <__bad_interrupt>
+   c:	32 c0       	rjmp	.+100    	; 0x72 <__bad_interrupt>
+   e:	31 c0       	rjmp	.+98     	; 0x72 <__bad_interrupt>
+  10:	30 c0       	rjmp	.+96     	; 0x72 <__bad_interrupt>
+  12:	2f c0       	rjmp	.+94     	; 0x72 <__bad_interrupt>
+  14:	2e c0       	rjmp	.+92     	; 0x72 <__bad_interrupt>
+  16:	2d c0       	rjmp	.+90     	; 0x72 <__bad_interrupt>
+  18:	2c c0       	rjmp	.+88     	; 0x72 <__bad_interrupt>
+  1a:	2b c0       	rjmp	.+86     	; 0x72 <__bad_interrupt>
+  1c:	2a c0       	rjmp	.+84     	; 0x72 <__bad_interrupt>
+  1e:	29 c0       	rjmp	.+82     	; 0x72 <__bad_interrupt>
+  20:	28 c0       	rjmp	.+80     	; 0x72 <__bad_interrupt>
+  22:	27 c0       	rjmp	.+78     	; 0x72 <__bad_interrupt>
+  24:	26 c0       	rjmp	.+76     	; 0x72 <__bad_interrupt>
+  26:	25 c0       	rjmp	.+74     	; 0x72 <__bad_interrupt>
+  28:	78 c0       	rjmp	.+240    	; 0x11a <__vector_20>
+  2a:	23 c0       	rjmp	.+70     	; 0x72 <__bad_interrupt>
+  2c:	22 c0       	rjmp	.+68     	; 0x72 <__bad_interrupt>
+  2e:	21 c0       	rjmp	.+66     	; 0x72 <__bad_interrupt>
+  30:	20 c0       	rjmp	.+64     	; 0x72 <__bad_interrupt>
+  32:	1f c0       	rjmp	.+62     	; 0x72 <__bad_interrupt>
+  34:	1e c0       	rjmp	.+60     	; 0x72 <__bad_interrupt>
+  36:	1d c0       	rjmp	.+58     	; 0x72 <__bad_interrupt>
+  38:	1c c0       	rjmp	.+56     	; 0x72 <__bad_interrupt>
+  3a:	1b c0       	rjmp	.+54     	; 0x72 <__bad_interrupt>
+
+0000003c <__ctors_end>:
+  3c:	11 24       	eor	r1, r1
+  3e:	1f be       	out	0x3f, r1	; 63
+  40:	cf ef       	ldi	r28, 0xFF	; 255
+  42:	d2 e0       	ldi	r29, 0x02	; 2
+  44:	de bf       	out	0x3e, r29	; 62
+  46:	cd bf       	out	0x3d, r28	; 61
+
+00000048 <__do_copy_data>:
+  48:	11 e0       	ldi	r17, 0x01	; 1
+  4a:	a0 e0       	ldi	r26, 0x00	; 0
+  4c:	b1 e0       	ldi	r27, 0x01	; 1
+  4e:	e4 e7       	ldi	r30, 0x74	; 116
+  50:	f1 e0       	ldi	r31, 0x01	; 1
+  52:	02 c0       	rjmp	.+4      	; 0x58 <__do_copy_data+0x10>
+  54:	05 90       	lpm	r0, Z+
+  56:	0d 92       	st	X+, r0
+  58:	a4 30       	cpi	r26, 0x04	; 4
+  5a:	b1 07       	cpc	r27, r17
+  5c:	d9 f7       	brne	.-10     	; 0x54 <__do_copy_data+0xc>
+
+0000005e <__do_clear_bss>:
+  5e:	21 e0       	ldi	r18, 0x01	; 1
+  60:	a4 e0       	ldi	r26, 0x04	; 4
+  62:	b1 e0       	ldi	r27, 0x01	; 1
+  64:	01 c0       	rjmp	.+2      	; 0x68 <.do_clear_bss_start>
+
+00000066 <.do_clear_bss_loop>:
+  66:	1d 92       	st	X+, r1
+
+00000068 <.do_clear_bss_start>:
+  68:	a6 30       	cpi	r26, 0x06	; 6
+  6a:	b2 07       	cpc	r27, r18
+  6c:	e1 f7       	brne	.-8      	; 0x66 <.do_clear_bss_loop>
+  6e:	23 d0       	rcall	.+70     	; 0xb6 <main>
+  70:	7f c0       	rjmp	.+254    	; 0x170 <_exit>
+
+00000072 <__bad_interrupt>:
+  72:	c6 cf       	rjmp	.-116    	; 0x0 <__vectors>
+
+00000074 <_Z8SPI_initv>:
+		}	
+	}
+}
+
+void SPI_init(){	//initialize SPI module	
+	PRR &= ~(1<<PRSPI); //enable SPI module in PRR; page 152; Page 39	
+  74:	e0 e7       	ldi	r30, 0x70	; 112
+  76:	f0 e0       	ldi	r31, 0x00	; 0
+  78:	80 81       	ld	r24, Z
+  7a:	8f 7e       	andi	r24, 0xEF	; 239
+  7c:	80 83       	st	Z, r24
+	SPCR |= 1<<SPIE;	//enable SPI interrupt; page 157; page 158
+  7e:	e2 eb       	ldi	r30, 0xB2	; 178
+  80:	f0 e0       	ldi	r31, 0x00	; 0
+  82:	80 81       	ld	r24, Z
+  84:	80 68       	ori	r24, 0x80	; 128
+  86:	80 83       	st	Z, r24
+	SPCR &= ~(1<<DORD);	//MSB to be transmitted first; page 157
+  88:	80 81       	ld	r24, Z
+  8a:	8f 7d       	andi	r24, 0xDF	; 223
+  8c:	80 83       	st	Z, r24
+	// SPCR &= ~(1<<MSTR);	//enable SPI slave mode; page 157	
+	
+	SPCR |= (1<<MSTR);	//enable master slave mode; page 157	
+  8e:	80 81       	ld	r24, Z
+  90:	80 61       	ori	r24, 0x10	; 16
+  92:	80 83       	st	Z, r24
+	SPCR &= ~(1<CPOL);	//SPI clk is low when idle; page 158
+  94:	80 81       	ld	r24, Z
+  96:	8e 7f       	andi	r24, 0xFE	; 254
+  98:	80 83       	st	Z, r24
+	SPCR &= ~(1<CPHA);	//Data is valid on leading edge; page 158
+  9a:	80 81       	ld	r24, Z
+  9c:	8e 7f       	andi	r24, 0xFE	; 254
+  9e:	80 83       	st	Z, r24
+	REMAP &= ~(1<SPIMAP);	//use default pin map; page 159
+  a0:	a5 e6       	ldi	r26, 0x65	; 101
+  a2:	b0 e0       	ldi	r27, 0x00	; 0
+  a4:	8c 91       	ld	r24, X
+  a6:	8c 93       	st	X, r24
+	// DDRA &= ~(1<<DDRA7);	//set PA7/SS as input; in slave mode, ss is always input; probably not needed; page 155
+	DDRA |= (1<<DDRA7);	//set PA7/SS as output
+  a8:	d7 9a       	sbi	0x1a, 7	; 26
+	DDRA |= 1<<DDRA6;	//set PA6/MOSI as output
+  aa:	d6 9a       	sbi	0x1a, 6	; 26
+	DDRA |= 1<<DDRA4;	//set PA4/SCK as output
+  ac:	d4 9a       	sbi	0x1a, 4	; 26
+	SPCR |= 1<<SPE;	//enable SPI module in SPI control Register; page 157
+  ae:	80 81       	ld	r24, Z
+  b0:	80 64       	ori	r24, 0x40	; 64
+  b2:	80 83       	st	Z, r24
+  b4:	08 95       	ret
+
+000000b6 <main>:
+volatile uint8_t data_in = 0;	//receive data
+volatile uint8_t data_out[] = {0x15, 0xAB, 0x04, 0x45};	//send data		
+volatile bool received_signal = false;	
+
+int main(){					
+	DDRB |= 1<<DDRB2;	
+  b6:	ba 9a       	sbi	0x17, 2	; 23
+	
+	cli();	//disable global interrupt; atmel built-in function
+  b8:	f8 94       	cli
+	//USART0_SPI_init(0);	//initialize USART0 module; user defined function; set the baud_rate to 1Mbps; page 180
+	SPI_init();	//initialize SPI module; user defined function
+  ba:	dc df       	rcall	.-72     	; 0x74 <_Z8SPI_initv>
+	sei();	//enable global interrupt; atmel built-in function
+  bc:	78 94       	sei
+				
+	while(1){		
+		_delay_ms(100);
+		PORTA &= ~(1<<PORTA7);
+		SPDR = data_out[1];	//place data to SPI data buffer					
+  be:	a0 e0       	ldi	r26, 0x00	; 0
+  c0:	b1 e0       	ldi	r27, 0x01	; 1
+  c2:	e0 eb       	ldi	r30, 0xB0	; 176
+  c4:	f0 e0       	ldi	r31, 0x00	; 0
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  c6:	2f ef       	ldi	r18, 0xFF	; 255
+  c8:	81 ee       	ldi	r24, 0xE1	; 225
+  ca:	94 e0       	ldi	r25, 0x04	; 4
+  cc:	21 50       	subi	r18, 0x01	; 1
+  ce:	80 40       	sbci	r24, 0x00	; 0
+  d0:	90 40       	sbci	r25, 0x00	; 0
+  d2:	e1 f7       	brne	.-8      	; 0xcc <main+0x16>
+  d4:	00 c0       	rjmp	.+0      	; 0xd6 <main+0x20>
+  d6:	00 00       	nop
+	SPI_init();	//initialize SPI module; user defined function
+	sei();	//enable global interrupt; atmel built-in function
+				
+	while(1){		
+		_delay_ms(100);
+		PORTA &= ~(1<<PORTA7);
+  d8:	df 98       	cbi	0x1b, 7	; 27
+		SPDR = data_out[1];	//place data to SPI data buffer					
+  da:	11 96       	adiw	r26, 0x01	; 1
+  dc:	8c 91       	ld	r24, X
+  de:	11 97       	sbiw	r26, 0x01	; 1
+  e0:	80 83       	st	Z, r24
+		PORTA |= (1<<PORTA7);
+  e2:	df 9a       	sbi	0x1b, 7	; 27
+		if(received_signal){
+  e4:	80 91 04 01 	lds	r24, 0x0104
+  e8:	88 23       	and	r24, r24
+  ea:	69 f3       	breq	.-38     	; 0xc6 <main+0x10>
+			received_signal = false;
+  ec:	10 92 04 01 	sts	0x0104, r1
+			PINB |= 1<<PINB2;	//toggle PORTB2
+  f0:	b2 9a       	sbi	0x16, 2	; 22
+  f2:	2f ef       	ldi	r18, 0xFF	; 255
+  f4:	81 ee       	ldi	r24, 0xE1	; 225
+  f6:	94 e0       	ldi	r25, 0x04	; 4
+  f8:	21 50       	subi	r18, 0x01	; 1
+  fa:	80 40       	sbci	r24, 0x00	; 0
+  fc:	90 40       	sbci	r25, 0x00	; 0
+  fe:	e1 f7       	brne	.-8      	; 0xf8 <main+0x42>
+ 100:	00 c0       	rjmp	.+0      	; 0x102 <main+0x4c>
+ 102:	00 00       	nop
+			_delay_ms(100);
+			PINB |= 1<<PINB2;	//toggle PORTB2
+ 104:	b2 9a       	sbi	0x16, 2	; 22
+ 106:	2f ef       	ldi	r18, 0xFF	; 255
+ 108:	81 ee       	ldi	r24, 0xE1	; 225
+ 10a:	94 e0       	ldi	r25, 0x04	; 4
+ 10c:	21 50       	subi	r18, 0x01	; 1
+ 10e:	80 40       	sbci	r24, 0x00	; 0
+ 110:	90 40       	sbci	r25, 0x00	; 0
+ 112:	e1 f7       	brne	.-8      	; 0x10c <main+0x56>
+ 114:	00 c0       	rjmp	.+0      	; 0x116 <main+0x60>
+ 116:	00 00       	nop
+ 118:	d6 cf       	rjmp	.-84     	; 0xc6 <main+0x10>
+
+0000011a <__vector_20>:
+	UBRR0 = baud_rate;	//set the baud_rate; baud_rate = 0 -> 1Mbps; page 180
+}
+
+//SPIF bit is set when a serial transfer is complete; p158
+//SPIF bit is cleared by hardware when the corresponding interrupt is served; page 158
+ISR(SPI_vect, ISR_BLOCK){	//SPI interrupt service routine; blocking all other interrupts	
+ 11a:	1f 92       	push	r1
+ 11c:	0f 92       	push	r0
+ 11e:	0f b6       	in	r0, 0x3f	; 63
+ 120:	0f 92       	push	r0
+ 122:	11 24       	eor	r1, r1
+ 124:	2f 93       	push	r18
+ 126:	8f 93       	push	r24
+ 128:	9f 93       	push	r25
+	//send data to digital phase shifter here	
+	data_in = SPDR;		//read data from SPI buffer
+ 12a:	80 91 b0 00 	lds	r24, 0x00B0
+ 12e:	80 93 05 01 	sts	0x0105, r24
+	//UDR0 = data_in;		//place data to USART0 data buffer and initiate data transfer; page 190
+	//while(!(UCSR0A & (1<<TXC0))){	//TXC0 bit is set if USART0_SPI transfer is complete; page 193
+		//;
+	//}		
+	//UCSR0A |= 1<<TXC0;	//clear USART0_SPI transmit complete signal; page 193	
+	PINB |= 1<<PINB2;	//toggle PORTB2
+ 132:	b2 9a       	sbi	0x16, 2	; 22
+ 134:	2f ef       	ldi	r18, 0xFF	; 255
+ 136:	81 ee       	ldi	r24, 0xE1	; 225
+ 138:	94 e0       	ldi	r25, 0x04	; 4
+ 13a:	21 50       	subi	r18, 0x01	; 1
+ 13c:	80 40       	sbci	r24, 0x00	; 0
+ 13e:	90 40       	sbci	r25, 0x00	; 0
+ 140:	e1 f7       	brne	.-8      	; 0x13a <__vector_20+0x20>
+ 142:	00 c0       	rjmp	.+0      	; 0x144 <__vector_20+0x2a>
+ 144:	00 00       	nop
+			_delay_ms(100);
+			PINB |= 1<<PINB2;	//toggle PORTB2
+ 146:	b2 9a       	sbi	0x16, 2	; 22
+ 148:	2f ef       	ldi	r18, 0xFF	; 255
+ 14a:	81 ee       	ldi	r24, 0xE1	; 225
+ 14c:	94 e0       	ldi	r25, 0x04	; 4
+ 14e:	21 50       	subi	r18, 0x01	; 1
+ 150:	80 40       	sbci	r24, 0x00	; 0
+ 152:	90 40       	sbci	r25, 0x00	; 0
+ 154:	e1 f7       	brne	.-8      	; 0x14e <__vector_20+0x34>
+ 156:	00 c0       	rjmp	.+0      	; 0x158 <__vector_20+0x3e>
+ 158:	00 00       	nop
+			_delay_ms(100);	
+	received_signal = true;	
+ 15a:	81 e0       	ldi	r24, 0x01	; 1
+ 15c:	80 93 04 01 	sts	0x0104, r24
+}
+ 160:	9f 91       	pop	r25
+ 162:	8f 91       	pop	r24
+ 164:	2f 91       	pop	r18
+ 166:	0f 90       	pop	r0
+ 168:	0f be       	out	0x3f, r0	; 63
+ 16a:	0f 90       	pop	r0
+ 16c:	1f 90       	pop	r1
+ 16e:	18 95       	reti
+
+00000170 <_exit>:
+ 170:	f8 94       	cli
+
+00000172 <__stop_program>:
+ 172:	ff cf       	rjmp	.-2      	; 0x172 <__stop_program>
